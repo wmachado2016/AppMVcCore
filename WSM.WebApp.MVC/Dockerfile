@@ -11,6 +11,7 @@ COPY ["WSM.WebApp.MVC/WSM.WebApp.MVC.csproj", "WSM.WebApp.MVC/"]
 RUN dotnet restore "WSM.WebApp.MVC/WSM.WebApp.MVC.csproj"
 COPY . .
 WORKDIR "/src/WSM.WebApp.MVC"
+
 RUN dotnet build "WSM.WebApp.MVC.csproj" -c Release -o /app/build
 
 FROM build AS publish
