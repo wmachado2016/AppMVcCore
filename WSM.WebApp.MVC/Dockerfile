@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["src/Web/WSM.WebApp.MVC/WSM.WebApp.MVC.csproj", "src/Web/WSM.WebApp.MVC/"]
-RUN dotnet restore "src/Web/WSM.WebApp.MVC/WSM.WebApp.MVC.csproj"
+COPY ["WSM.WebApp.MVC/WSM.WebApp.MVC.csproj", "WSM.WebApp.MVC/"]
+RUN dotnet restore "WSM.WebApp.MVC/WSM.WebApp.MVC.csproj"
 COPY . .
-WORKDIR "/src/src/Web/WSM.WebApp.MVC"
+WORKDIR "WSM.WebApp.MVC"
 RUN dotnet build "WSM.WebApp.MVC.csproj" -c Release -o /app/build
 
 FROM build AS publish
