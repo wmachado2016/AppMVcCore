@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WSM.ResApi\WSM.ResApi.csproj" />
-    <ProjectReference Include="..\WSM.WebApp.MVC\WSM.WebApp.MVC.csproj" />
   </ItemGroup>
 
 </Project>
