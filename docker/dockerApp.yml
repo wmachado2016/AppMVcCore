@@ -12,3 +12,23 @@ services:
     environment:
       - ASPNETCORE_ENVIRONEMENT=Development
       - ASPNETCORE_URLS=http://*:5001
+
+  api-rest:
+    image: wsm/api-rest-mvc:latest
+    container_name: api-rest-mvc
+    build:
+      context: ../
+      dockerfile: "WSM.ResApi/Dockerfile"
+    environment:
+      - ASPNETCORE_ENVIRONEMENT=Development
+      - ASPNETCORE_URLS=http://*:5002
+
+  api-test:
+    image: wsm/api-test-mvc:latest
+    container_name: api-test-mvc
+    build:
+      context: ../
+      dockerfile: "WSM.Testes/Dockerfile"
+    environment:
+      - ASPNETCORE_ENVIRONEMENT=Development
+      - ASPNETCORE_URLS=http://*:5003
