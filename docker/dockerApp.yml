@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web-mvc:
+    image: wsm/wsm-webapp-mvc:latest
+    container_name: wsm-webapp-mvc
+    build:
+      context: ../
+      dockerfile: WSM.WebApp.MVC/Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONEMENT=Development
+      - ASPNETCORE_URLS=http://*:5001
