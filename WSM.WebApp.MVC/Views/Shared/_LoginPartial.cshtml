@@ -1,0 +1,14 @@
+﻿@using WSM.WebApp.MVC.Extensions
+@inject IUser AppUser
+
+   
+@if (AppUser.EstaAutenticado())
+{
+    <li><a title="Manage">Olá @AppUser.ObterUserEmail()</a></li>
+    <li><a asp-controller="Identidade" asp-action="Logout">Sair</a></li>    
+}
+else
+{
+    <li style="margin:0px 15px 0px 15px;"><a asp-controller="Identidade" asp-action="Registro">Cadastrar Acesso</a></li>
+    <li><a asp-controller="Identidade" asp-action="Login">Login</a></li>   
+}
