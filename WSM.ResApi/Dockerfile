@@ -8,6 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["WSM.ResApi/WSM.ResApi.csproj", "WSM.ResApi/"]
+
 RUN dotnet restore "WSM.ResApi/WSM.ResApi.csproj"
 COPY . .
 WORKDIR "/src/WSM.ResApi"
