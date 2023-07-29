@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WSM.Testes": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
